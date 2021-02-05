@@ -1,5 +1,5 @@
-<h1><%= t :new, scope: 'heading.books' %></h1>
+<h1><%= t('.heading') %></h1>
 
 <%= render 'form', book: @book %>
 
-<%= link_to "#{t :back, scope: 'user_actions'}", books_path %>
+<%= link_to t('.links.back_home'), books_path %>

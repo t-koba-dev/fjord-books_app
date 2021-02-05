@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong><%= t :title, scope: 'books' %>:</strong>
+  <strong><%= t('.title') %>:</strong>
   <%= @book.title %>
 </p>
 
 <p>
-  <strong><%= t :memo, scope: 'books' %>:</strong>
+  <strong><%= t('.memo') %>:</strong>
   <%= @book.memo %>
 </p>
 
 <p>
-  <strong><%= t :author, scope: 'books' %>:</strong>
+  <strong><%= t('.author') %>:</strong>
   <%= @book.author %>
 </p>
 
 <p>
-  <strong><%= t :picture, scope: 'books' %>:</strong>
+  <strong><%= t('.picture') %>:</strong>
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
-<%= link_to "#{t :edit, scope: 'user_actions'}", edit_book_path(@book) %> |
-<%= link_to "#{t :back, scope: 'user_actions'}", books_path %>
+<%= link_to t('.links.edit_book'), edit_book_path(@book) %> |
+<%= link_to t('.links.back_home'), books_path %>
