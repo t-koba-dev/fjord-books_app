@@ -1,22 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong><%= t :title %>:</strong>
+  <strong><%= t :title, scope: 'book' %>:</strong>
   <%= @book.title %>
 </p>
 
 <p>
-  <strong><%= t :memo %>:</strong>
+  <strong><%= t :memo, scope: 'book' %>:</strong>
   <%= @book.memo %>
 </p>
 
 <p>
-  <strong><%= t :author %>:</strong>
+  <strong><%= t :author, scope: 'book' %>:</strong>
   <%= @book.author %>
 </p>
 
 <p>
-  <strong><%= t :picture %>:</strong>
+  <strong><%= t :picture, scope: 'book' %>:</strong>
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 

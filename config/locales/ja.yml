@@ -1,8 +1,9 @@
 ja:
-  title: "タイトル"
-  memo: "メモ"
-  author: "作者"
-  picture: "画像"
+  book:
+    title: "タイトル"
+    memo: "メモ"
+    author: "作者"
+    picture: "画像"
   user_actions:
     new: "新しく本を登録する"
     show: "詳細"
