@@ -3,3 +3,15 @@ ja:
   memo: "メモ"
   author: "作者"
   picture: "画像"
+  user_actions:
+    new: "新しく本を登録する"
+    show: "詳細"
+    edit: "編集"
+    destroy: "削除"
+    back: "戻る"
+  notices:
+    confirmation_to_destroy: "本当に削除しますか？"
+    error_to_save_book: "本の登録に失敗しました"
+  form_actions:
+    new: "登録"
+    edit: "更新"

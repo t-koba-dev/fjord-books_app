@@ -34,3 +34,15 @@ en:
   memo: "Memo"
   author: "Author"
   picture: "Picture"
+  user_actions:
+    new: "New Book"
+    show: "Show"
+    edit: "Edit"
+    destroy: "Destroy"
+    back: "Back"
+  notices:
+    confirmation_to_destroy: "Are you sure?"
+    error_to_save_book: "prohibited this book from being saved"
+  form_actions:
+    new: "Create Book"
+    edit: "Update Book"
