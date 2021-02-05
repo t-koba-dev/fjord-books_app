@@ -35,6 +35,11 @@ en:
     memo: "Memo"
     author: "Author"
     picture: "Picture"
+  heading:
+    books:
+      index: "Books"
+      new: "New Book"
+      edit: "Editing Book"
   user_actions:
     new: "New Book"
     show: "Show"
