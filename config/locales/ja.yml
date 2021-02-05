@@ -4,6 +4,12 @@ ja:
     memo: "メモ"
     author: "作者"
     picture: "画像"
+    create:
+      success: "書籍は正常に作成されました。"
+    update:
+      success: "書籍は正常に更新されました。"
+    destroy:
+      success: "書籍は正常に削除されました。"
   heading:
     books:
       index: "書籍一覧"

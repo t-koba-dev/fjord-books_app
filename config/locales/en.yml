@@ -30,11 +30,17 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  book:
+  books:
     title: "Title"
     memo: "Memo"
     author: "Author"
     picture: "Picture"
+    create:
+      success: "Book was successfully created."
+    update:
+      success: "Book was successfully updated."
+    destroy:
+      success: "Book was successfully destroyed."
   heading:
     books:
       index: "Books"
