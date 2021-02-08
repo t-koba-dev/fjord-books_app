@@ -32,6 +32,21 @@
   </div>
 
   <div class="field">
+    <%= f.label :postal_code %>
+    <%= f.text_field :postal_code, autofocus: true%>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_field :address, autofocus: true%>
+  </div>
+
+  <div class="field">
+    <%= f.label :self_introduction %>
+    <%= f.text_field :self_introduction, autofocus: true%>
+  </div>
+
+  <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
