@@ -1,7 +1,7 @@
 <%= form_with(model: book, local: true) do |form| %>
   <% if book.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+      <h2><%= pluralize(book.errors.count, "error") %> <%= t :error_to_save_book, scope: 'notices' %>:</h2>
 
       <ul>
         <% book.errors.full_messages.each do |message| %>
@@ -12,26 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label :title, Book.human_attribute_name(:title) %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :memo %>
+    <%= form.label :memo, Book.human_attribute_name(:memo) %>
     <%= form.text_area :memo %>
   </div>
 
   <div class="field">
-    <%= form.label :author %>
+    <%= form.label :author, Book.human_attribute_name(:author) %>
     <%= form.text_field :author %>
   </div>
 
   <div class="field">
-    <%= form.label :picture %>
+    <%= form.label :picture, Book.human_attribute_name(:picture) %>
     <%= form.file_field :picture %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <% if current_page?(new_book_path) %>
+      <%= form.submit value="#{t :new, scope: 'form_actions'}" %>
+    <% elsif current_page?(edit_book_path) %>
+      <%= form.submit value="#{t :edit, scope: 'form_actions'}" %>
+    <% else %>
+      <%= form.submit %>
+    <% end %>
   </div>
 <% end %>

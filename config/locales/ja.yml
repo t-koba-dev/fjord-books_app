@@ -1,0 +1,39 @@
+ja:
+  activerecord:
+    attributes:
+      book:
+        title: "タイトル"
+        memo: "メモ"
+        author: "作者"
+        picture: "画像"
+  default: &default
+    links:
+      new_book: "新しく本を登録する"
+      show_book: "詳細"
+      edit_book: "編集"
+      destroy_book: "削除"
+      back_home: "戻る"
+  books:
+    create:
+      success: "書籍は正常に作成されました。"
+    update:
+      success: "書籍は正常に更新されました。"
+    destroy:
+      success: "書籍は正常に削除されました。"
+    index:
+      <<: *default
+      heading: "書籍一覧"
+    new:
+      <<: *default
+      heading: "新しく本を登録する"
+    edit:
+      <<: *default
+      heading: "書籍情報を更新する"
+    show:
+      <<: *default
+  notices:
+    confirmation_to_destroy: "本当に削除しますか？"
+    error_to_save_book: "本の登録に失敗しました"
+  form_actions:
+    new: "登録"
+    edit: "更新"
