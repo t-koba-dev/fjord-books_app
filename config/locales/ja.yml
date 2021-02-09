@@ -7,10 +7,6 @@ ja:
         author: "作者"
         picture: "画像"
   default: &default
-    title: "タイトル"
-    memo: "メモ"
-    author: "作者"
-    picture: "画像"
     links:
       new_book: "新しく本を登録する"
       show_book: "詳細"
