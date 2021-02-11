@@ -19,7 +19,7 @@
         <td><%= user.postal_code %></td>
         <td><%= user.address %></td>
         <% if user.avatar.attached? %>
-          <td><%= image_tag user.avatar %></td>
+          <td><%= image_tag user.avatar.variant(resize: "75x75") %></td>
         <% end %>
         <td><%= link_to t('views.common.show'), user %></td>
       </tr>
