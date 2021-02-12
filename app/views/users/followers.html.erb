@@ -1,0 +1,39 @@
+<h1>
+  <% if current_user == @user %>
+    <%= "#{t('views.relationship.your')}" %>
+  <% else %>
+    <%= "#{t('views.relationship.other', name: @user.email)}" %>
+  <% end %>
+  <%= "#{t('views.relationship.followers')}#{t('views.relationship.list')}" %>
+</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th><%= User.human_attribute_name(:email) %></th>
+      <th><%= User.human_attribute_name(:name) %></th>
+      <th><%= User.human_attribute_name(:postal_code) %></th>
+      <th><%= User.human_attribute_name(:address) %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @followers.each do |user| %>
+      <tr>
+        <th>
+          <% if user.avatar.attached? %>
+            <%= image_tag user.avatar.variant(resize_to_fill: [30, 30])%>
+          <% end %>
+        </th>
+        <td><%= user.email %></td>
+        <td><%= user.name %></td>
+        <td><%= user.postal_code %></td>
+        <td><%= user.address %></td>
+        <td><%= link_to t('views.common.show'), user %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @followers %>
