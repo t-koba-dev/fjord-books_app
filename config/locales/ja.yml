@@ -218,13 +218,14 @@ ja:
       title_show: "%{name}の詳細"
       sign_out: ログアウト
       minimum_length: "%{length}文字以上"
+      not_applicable: 該当者は存在しません。
     relationship:
       followings: フォロー
       followers: フォロワー
       follow: フォロー
       follow_destroy: フォロー解除
       your: あなたの
-      other: "%{name}"
+      other: "%{name}の"
       list: 一覧
     pagination:
       first: '最初'
