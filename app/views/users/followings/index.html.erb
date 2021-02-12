@@ -1,4 +1,11 @@
-<h1><%= "#{t('views.relationship.followings')}#{t('views.relationship.list')}" %></h1>
+<h1>
+  <% if current_user == @user %>
+    <%= "#{t('views.relationship.your')}" %>
+  <% else %>
+    <%= "#{t('views.relationship.other', name: @user.email)}" %>
+  <% end %>
+  <%= "#{t('views.relationship.followings')}#{t('views.relationship.list')}" %>
+</h1>
 
 <table>
   <thead>

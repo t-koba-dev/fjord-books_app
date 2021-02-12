@@ -4,10 +4,8 @@ Rails.application.routes.draw do
   root to: 'books#index'
   resources :books
   resources :users, only: %i(index show) do
-    member do
-      get  'followings'
-      get  'followers'
-    end
+    resources :followings, only: [:index], module: :users
+    resources :followers, only: [:index], module: :users
   end
   resources :relationships, only: %i[create destroy]
 end

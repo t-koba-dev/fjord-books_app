@@ -34,14 +34,14 @@
 </p>
 
 <p>
-  <%= link_to followings_user_path(@user) do %>
+  <%= link_to user_followings_path(@user) do %>
     <strong><%= t('views.relationship.followings') %>:</strong>
     <%= @user.followings.size %>
   <% end %>
 </p>
 
 <p>
-  <%= link_to followers_user_path(@user) do %>
+  <%= link_to user_followers_path(@user) do %>
     <strong><%= t('views.relationship.followers') %>:</strong>
     <%= @user.followers.size %>
   <% end %>
