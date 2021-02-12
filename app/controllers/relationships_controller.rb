@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class RelationshipsController < ApplicationController
   before_action :set_user
 
   def create
-    following = current_user.follow(@user)
+    current_user.follow(@user)
     redirect_to @user
   end
 
