@@ -34,12 +34,12 @@
 </p>
 
 <p>
-  <strong><%= User.human_attribute_name(:followings) %>:</strong>
+  <strong><%= t('views.relationship.followings') %>:</strong>
   <%= @user.followings.size %>
 </p>
 
 <p>
-  <strong><%= User.human_attribute_name(:followers) %>:</strong>
+  <strong><%= t('views.relationship.followers') %>:</strong>
   <%= @user.followers.size %>
 </p>
 
@@ -49,12 +49,12 @@
   <% if current_user.following?(@user) %>
     <%= form_for(current_user.relationships.find_by(follow_id: @user.id), html: { method: :delete }) do |f| %>
       <%= hidden_field_tag :follow_id, @user.id %>
-      <%= f.submit 'フォロー解除' %>
+      <%= f.submit t('views.relationship.following_destroy') %>
     <% end %>
   <% else %>
     <%= form_for(current_user.relationships.build) do |f| %>
       <%= hidden_field_tag :follow_id, @user.id %>
-      <%= f.submit 'フォロー' %>
+      <%= f.submit t('views.relationship.following_create') %>
     <% end %>
   <% end %>
 <% end %>
