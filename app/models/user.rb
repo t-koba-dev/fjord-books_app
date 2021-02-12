@@ -21,4 +21,13 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0, 20]
     end
   end
+
+  def follow(other_user)
+    relationships.find_or_create_by(follow_id: other_user.id) unless self == other_user
+  end
+
+  def following?(other_user)
+    followings.include?(other_user)
+  end
+
 end
