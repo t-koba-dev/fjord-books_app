@@ -221,8 +221,11 @@ ja:
     relationship:
       followings: フォロー
       followers: フォロワー
-      following_create: フォロー
-      following_destroy: フォロー解除
+      follow: フォロー
+      follow_destroy: フォロー解除
+      your: あなたの
+      other: "%{name}"
+      list: 一覧
     pagination:
       first: '最初'
       last: '最後'
