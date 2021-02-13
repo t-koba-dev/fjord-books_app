@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class BooksController < ApplicationController
-  before_action :check_if_user_signed_in
   before_action :set_book, only: %i[show edit update destroy]
 
   def index
@@ -40,10 +39,6 @@ class BooksController < ApplicationController
   end
 
   private
-
-  def check_if_user_signed_in
-    redirect_to new_user_session_path unless user_signed_in?
-  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_book
