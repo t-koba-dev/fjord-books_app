@@ -39,13 +39,13 @@ class ReportsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_report
-      @report = Report.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_report
+    @report = Report.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def report_params
-      params.require(:report).permit(:title, :body).merge(user_id: current_user.id)
-    end
+  # Only allow a list of trusted parameters through.
+  def report_params
+    params.require(:report).permit(:title, :body).merge(user_id: current_user.id)
+  end
 end
