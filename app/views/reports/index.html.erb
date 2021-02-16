@@ -14,8 +14,9 @@
 
   <tbody>
     <% @reports.each do |report| %>
+    <% date = report.created_at.in_time_zone('Japan') %>
       <tr>
-        <td><%= "#{report.created_at.year}年#{report.created_at.month}月#{report.created_at.day}日" %></td>
+        <td><%= "#{date.year}年#{date.month}月#{date.day}日" %></td>
         <td><%= report.title %></td>
         <td><%= report.body %></td>
         <td><%= link_to t('views.common.show'), report %></td>

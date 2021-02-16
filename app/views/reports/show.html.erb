@@ -31,7 +31,8 @@
         <%= comment.user.email %> |
       <% end %>
       <%= comment.body %> |
-      <%= comment.created_at %>
+      <% date = comment.created_at.in_time_zone('Japan') %>
+      <%= "#{date.year}年#{date.month}月#{date.day}日#{date.hour}時#{date.min}分" %>
     </p>
   <% end %>
 </p>
