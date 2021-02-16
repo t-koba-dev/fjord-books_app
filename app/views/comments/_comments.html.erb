@@ -1,0 +1,16 @@
+<p>
+  <strong><%= Comment.model_name.human %>:</strong>
+  <% commentable.comments.each do |comment| %>
+    <% next unless comment.body.present? %>
+    <p>
+      <% if comment.user.name.present? %>
+        <%= comment.user.name %> |
+      <% else %>
+        <%= comment.user.email %> |
+      <% end %>
+      <%= comment.body %> |
+      <% date = comment.created_at.in_time_zone('Japan') %>
+      <%= "#{date.year}年#{date.month}月#{date.day}日#{date.hour}時#{date.min}分" %>
+    </p>
+  <% end %>
+</p>
