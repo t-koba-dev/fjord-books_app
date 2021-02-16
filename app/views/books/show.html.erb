@@ -22,3 +22,21 @@
 
 <%= link_to t('views.common.edit'), edit_book_path(@book) %> |
 <%= link_to t('views.common.back'), books_path %>
+
+<p>
+  <strong>comments:</strong>
+  <% @book.comments.each do |comment| %>
+    <% next unless comment.body.present? %>
+    <p>
+      <% if comment.user.name.present? %>
+        <%= comment.user.name %> |
+      <% else %>
+        <%= comment.user.email %> |
+      <% end %>
+      <%= comment.body %> |
+      <%= comment.created_at %>
+    </p>
+  <% end %>
+</p>
+
+<%= render 'comments/form', commentable: @book %>
