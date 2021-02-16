@@ -6,6 +6,8 @@ class ReportsController < ApplicationController
   end
 
   def show
+    @report = Report.find(params[:id])
+    @comment = @report.comments.new
   end
 
   def new
