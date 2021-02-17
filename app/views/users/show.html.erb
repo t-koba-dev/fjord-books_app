@@ -51,13 +51,13 @@
   <%= link_to t('views.common.edit'), edit_user_registration_path %> |
 <% else %>
   <% if current_user.following?(@user) %>
-    <%= form_for(current_user.relationships.find_by(follow_id: @user.id), html: { method: :delete }) do |f| %>
-      <%= hidden_field_tag :follow_id, @user.id %>
+    <%= form_for(current_user.relationships.find_by(following_id: @user.id), html: { method: :delete }) do |f| %>
+      <%= hidden_field_tag :following_id, @user.id %>
       <%= f.submit t('views.relationship.follow_destroy') %>
     <% end %>
   <% else %>
     <%= form_for(current_user.relationships.build) do |f| %>
-      <%= hidden_field_tag :follow_id, @user.id %>
+      <%= hidden_field_tag :following_id, @user.id %>
       <%= f.submit t('views.relationship.follow') %>
     <% end %>
   <% end %>
