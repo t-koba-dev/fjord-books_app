@@ -31,6 +31,6 @@ class User < ApplicationRecord
   end
 
   def following?(other_user)
-    followings.include?(other_user)
+    followings.where(id: other_user.id).exists?
   end
 end
