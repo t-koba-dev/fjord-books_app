@@ -3,6 +3,6 @@
 class Users::FollowingsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @followings = @user.followings.order(:id).page(params[:page])
+    @followings = @user.followings.order(:id).preload(avatar_attachment: :blob).page(params[:page])
   end
 end
