@@ -3,7 +3,7 @@
 </p>
 <ul>
   <% commentable.comments.each do |comment| %>
-    <% next unless comment.body.present? %>
+    <% next unless comment.persisted? %>
     <li>
       <% if comment.user.name.present? %>
         <%= comment.user.name %> |
