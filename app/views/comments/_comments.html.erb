@@ -5,11 +5,7 @@
   <% commentable.comments.each do |comment| %>
     <% next unless comment.persisted? %>
     <li>
-      <% if comment.user.name.present? %>
-        <%= comment.user.name %> |
-      <% else %>
-        <%= comment.user.email %> |
-      <% end %>
+      <%= comment.user.user_or_email %> |
       <%= comment.body %> |
       <% date = comment.created_at.in_time_zone('Japan') %>
       <%= "#{date.year}年#{date.month}月#{date.day}日#{date.hour}時#{date.min}分" %>
