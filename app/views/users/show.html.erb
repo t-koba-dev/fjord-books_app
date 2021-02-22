@@ -33,7 +33,32 @@
   <% end %>
 </p>
 
+<p>
+  <%= link_to user_followings_path(@user) do %>
+    <strong><%= t('views.relationship.followings') %>:</strong>
+    <%= @user.followings.size %>
+  <% end %>
+</p>
+
+<p>
+  <%= link_to user_followers_path(@user) do %>
+    <strong><%= t('views.relationship.followers') %>:</strong>
+    <%= @user.followers.size %>
+  <% end %>
+</p>
+
 <% if current_user == @user %>
   <%= link_to t('views.common.edit'), edit_user_registration_path %> |
+<% else %>
+  <% if current_user.following?(@user) %>
+    <%= form_with url: relationship_path(@user), method: :delete do |f| %>
+      <%= f.submit t('views.relationship.follow_destroy') %>
+    <% end %>
+  <% else %>
+    <%= form_with url: relationships_path(@user), method: :post do |f| %>
+      <%= f.submit t('views.relationship.follow') %>
+    <% end %>
+  <% end %>
 <% end %>
+
 <%= link_to t('views.common.back'), users_path %>

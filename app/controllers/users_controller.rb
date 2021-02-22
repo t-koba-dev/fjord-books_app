@@ -2,7 +2,7 @@
 
 class UsersController < ApplicationController
   def index
-    @users = User.with_attached_avatar.order(:id).page(params[:page])
+    @users = User.order(:id).preload(avatar_attachment: :blob).page(params[:page])
   end
 
   def show
