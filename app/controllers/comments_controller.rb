@@ -4,8 +4,7 @@ class CommentsController < ApplicationController
   def new; end
 
   def create
-    comment = @commentable.comments.new(comment_params)
-    comment.save!
+    @commentable.comments.create!(comment_params)
     redirect_to @commentable
   end
 
