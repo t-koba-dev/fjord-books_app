@@ -1,0 +1,13 @@
+<p>
+  <strong><%= Comment.model_name.human %>:</strong>
+</p>
+<ul>
+  <% commentable.comments.each do |comment| %>
+    <% next unless comment.persisted? %>
+    <li>
+      <%= comment.user.user_or_email %> |
+      <%= comment.body %> |
+      <%= l comment.created_at %>
+    </li>
+  <% end %>
+</ul>
