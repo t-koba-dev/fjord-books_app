@@ -38,10 +38,14 @@ class BooksTest < ApplicationSystemTestCase
       click_on '編集', match: :first
     end
 
-    fill_in 'メモ', with: @book.memo
-    fill_in 'タイトル', with: @book.title
+    fill_in 'タイトル', with: 'Ruby超更新'
+    fill_in 'メモ', with: 'すごく更新！'
+    fill_in '著者', with: 'Mr 更新'
     click_on '更新する'
 
+    assert_text 'Ruby超更新'
+    assert_text 'すごく更新！'
+    assert_text 'Mr 更新'
     assert_text '本が更新されました。'
   end
 
