@@ -8,16 +8,15 @@ class ReportTest < ActiveSupport::TestCase
     @report = Report.create!(user: @alice, title: 'first_report', content: 'hello_bob')
   end
 
-  test "#editable?" do
+  test '#editable?' do
     bob = User.create!(email: 'bob1@example.com', password: 'password')
 
     assert @report.editable?(@alice)
     assert_not @report.editable?(bob)
   end
 
-  test "#created_on" do
-
-    assert @report.created_on == Date.today
-    assert_not @report.created_on == Date.today.next_day
+  test '#created_on' do
+    assert @report.created_on == Time.zone.today
+    assert_not @report.created_on == Time.zone.today.next_day
   end
 end
