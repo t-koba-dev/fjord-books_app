@@ -21,8 +21,9 @@ class BooksTest < ApplicationSystemTestCase
     visit books_url
     click_on '新規作成'
 
-    fill_in 'メモ', with: @book.memo
-    fill_in 'タイトル', with: @book.title
+    fill_in 'タイトル', with: 'Ruby超入門'
+    fill_in 'メモ', with: 'すごくわかりやすい！'
+    fill_in '著者', with: 'Mr igaiga'
     click_on '登録する'
 
     assert_text '本が作成されました。'
