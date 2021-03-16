@@ -3,20 +3,21 @@
 require 'test_helper'
 
 class ReportTest < ActiveSupport::TestCase
-  test "#editable?" do
-    alice = User.create!(email: 'alice1@example.com', password: 'password')
-    bob = User.create!(email: 'bob1@example.com', password: 'password')
-    report = Report.create!(user: alice, title: 'first_report', content: 'hello_bob')
+  def setup
+    @alice = User.create!(email: 'alice1@example.com', password: 'password')
+    @report = Report.create!(user: @alice, title: 'first_report', content: 'hello_bob')
+  end
 
-    assert report.editable?(alice)
-    assert_not report.editable?(bob)
+  test "#editable?" do
+    bob = User.create!(email: 'bob1@example.com', password: 'password')
+
+    assert @report.editable?(@alice)
+    assert_not @report.editable?(bob)
   end
 
   test "#created_on" do
-    alice = User.create!(email: 'alice1@example.com', password: 'password')
-    report = Report.create!(user: alice, title: 'first_report', content: 'hello_bob')
 
-    assert report.created_on == Date.today
-    assert_not report.created_on == Date.today.next_day
+    assert @report.created_on == Date.today
+    assert_not @report.created_on == Date.today.next_day
   end
 end
