@@ -27,6 +27,9 @@ class BooksTest < ApplicationSystemTestCase
     click_on '登録する'
 
     assert_text '本が作成されました。'
+    assert_text 'Ruby超入門'
+    assert_text 'すごくわかりやすい！'
+    assert_text 'Mr igaiga'
     click_on '戻る'
   end
 
