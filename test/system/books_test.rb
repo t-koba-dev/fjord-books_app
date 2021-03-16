@@ -30,7 +30,6 @@ class BooksTest < ApplicationSystemTestCase
     assert_text 'Ruby超入門'
     assert_text 'すごくわかりやすい！'
     assert_text 'Mr igaiga'
-    click_on '戻る'
   end
 
   test '本を更新できる' do
@@ -44,7 +43,6 @@ class BooksTest < ApplicationSystemTestCase
     click_on '更新する'
 
     assert_text '本が更新されました。'
-    click_on '戻る'
   end
 
   test '本を削除できる' do
