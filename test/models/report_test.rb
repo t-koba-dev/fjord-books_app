@@ -17,6 +17,5 @@ class ReportTest < ActiveSupport::TestCase
 
   test '#created_on' do
     assert @report.created_on == Time.zone.today
-    assert_not @report.created_on == Time.zone.today.next_day
   end
 end
