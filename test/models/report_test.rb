@@ -9,7 +9,7 @@ class ReportTest < ActiveSupport::TestCase
   end
 
   test '#editable?' do
-    bob = User.create!(email: 'bob1@example.com', password: 'password')
+    bob = users(:bob)
 
     assert @report.editable?(@alice)
     assert_not @report.editable?(bob)
