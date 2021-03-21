@@ -4,8 +4,8 @@ require 'test_helper'
 
 class ReportTest < ActiveSupport::TestCase
   def setup
-    @alice = User.create!(email: 'alice1@example.com', password: 'password')
-    @report = Report.create!(user: @alice, title: 'first_report', content: 'hello_bob')
+    @alice = users(:alice)
+    @report = reports(:report_written_by_alice)
   end
 
   test '#editable?' do
