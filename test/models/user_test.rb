@@ -4,15 +4,15 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @alice = User.create!(email: 'alice1@example.com', password: 'password')
-    @bob = User.create!(email: 'bob1@example.com', password: 'password')
+    @alice = users(:alice)
+    @bob = users(:bob)
   end
 
   test '#name_or_email' do
-    assert_equal 'alice1@example.com', @alice.name_or_email
-
-    @alice.name = 'alice'
     assert_equal 'alice', @alice.name_or_email
+
+    @alice.name = nil
+    assert_equal 'alice@example.com', @alice.name_or_email
   end
 
   test '#follow' do
