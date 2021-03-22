@@ -56,6 +56,7 @@ class BooksTest < ApplicationSystemTestCase
       click_on '削除', match: :first
     end
 
+    assert_no_text 'ゼロからわかるRuby超入門'
     assert_text '本が削除されました。'
   end
 end
