@@ -22,15 +22,15 @@ class BooksTest < ApplicationSystemTestCase
     visit books_url
     click_on '新規作成'
 
-    fill_in 'タイトル', with: 'Ruby超入門'
-    fill_in 'メモ', with: 'すごくわかりやすい！'
-    fill_in '著者', with: 'Mr igaiga'
+    fill_in 'タイトル', with: 'プログラムはなぜ動くのか'
+    fill_in 'メモ', with: '知っておきたいプログラミングの基礎知識'
+    fill_in '著者', with: '矢沢久雄'
     click_on '登録する'
 
     assert_text '本が作成されました。'
-    assert_text 'Ruby超入門'
-    assert_text 'すごくわかりやすい！'
-    assert_text 'Mr igaiga'
+    assert_text 'プログラムはなぜ動くのか'
+    assert_text '知っておきたいプログラミングの基礎知識'
+    assert_text '矢沢久雄'
   end
 
   test '本を更新できる' do
