@@ -21,13 +21,13 @@ class ReportsTest < ApplicationSystemTestCase
     visit reports_url
     click_on '新規作成'
 
-    fill_in 'タイトル', with: '初めての日報'
-    fill_in '内容', with: 'こんにちは'
+    fill_in 'タイトル', with: '読書感想文の課題図書を借りた'
+    fill_in '内容', with: '夏休み前に図書館で借りれた。ラッキ〜'
     click_on '登録する'
 
     assert_text '日報が作成されました。'
-    assert_text '初めての日報'
-    assert_text 'こんにちは'
+    assert_text '読書感想文の課題図書を借りた'
+    assert_text '夏休み前に図書館で借りれた。ラッキ〜'
   end
 
   test '日報を更新できる' do
