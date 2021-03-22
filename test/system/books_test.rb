@@ -15,6 +15,7 @@ class BooksTest < ApplicationSystemTestCase
   test '本一覧ページに文字列\'本\'がある' do
     visit books_url
     assert_selector 'h1', text: '本'
+    assert_text 'ゼロからわかるRuby超入門'
   end
 
   test '本を作成できる' do
